@@ -13,13 +13,13 @@
     }
     
     body{
-        @apply text-base leading-7 font-normal text-neutrals overflow-x-hidden bg-background;
+        @apply text-sm desktop:text-base leading-[22px] desktop:leading-7 font-normal text-neutrals overflow-x-hidden bg-background;
     }
     h1{
-        @apply text-[76px] leading-none font-bold;
+        @apply text-[54px] desktop:text-[76px] leading-none font-bold;
     }
     h2{
-        @apply text-[40px] leading-5 font-bold;
+        @apply text-[28px] desktop:text-[40px] leading-[1.2em] font-bold;
     }
     h3{
         @apply text-2xl leading-[22px] font-normal;
@@ -39,25 +39,25 @@
         @apply border-neutrals border border-solid border-opacity-0 py-2 pl-[25px] pr-3 bg-[#fff] text-neutrals focus:outline-none placeholder:text-neutrals focus:border focus:border-solid focus:border-primary;
     }
     section{
-        @apply px-20 py-16;
+        @apply py-9 desktop:px-20 desktop:py-16;
     }
 }
 @layer components{
     .mgi_container{
-        @apply container mx-auto;
+        @apply container px-6 mx-auto;
     }
     /* Mgi grid */
     .mgi_grid--1{
         @apply grid grid-cols-1;
     }
     .mgi_grid--2{
-        @apply grid grid-cols-2;
+        @apply grid grid-cols-1 gap-y-10 desktop:grid-cols-2;
     }
     .mgi_grid--3{
         @apply grid grid-cols-3;
     }
     .mgi_grid--4{
-        @apply grid grid-cols-4;
+        @apply grid grid-cols-1 tablet:grid-cols-2 gap-y-10 desktop:grid-cols-4;
     }
     .mgi_grid--7{
         @apply grid grid-cols-7;
@@ -79,31 +79,43 @@
     }
     /* NAV Menu */
     .mgi_nav{
-        @apply flex flex-row w-full items-center;
+        @apply flex flex-row w-full justify-between items-center;
     }
     .mgi_menu--text ul{
-        @apply flex flex-row items-center;
+        @apply desktop:flex desktop:flex-row items-center;
     }
     .mgi_menu--text ul li{
         @apply mr-10;
+    }
+    .mgi_menu--text, .mgi_menu--btn{
+        @apply hidden;
     }
     header{
         @apply absolute top-0 left-0 right-0 z-50 bg-background;
     }
     nav{
-        @apply py-[38px];
+        @apply py-5 desktop:py-[38px];
+    }
+    .mgi_hambuger{
+        @apply desktop:hidden w-8 h-8 bg-neutrals cursor-pointer px-2 py-3 flex flex-col justify-between;
+    }
+    .mgi_hambuger span{
+        @apply block w-full h-0.5 bg-[#fff];
     }
     .mgi_logo{
-        @apply min-w-[250px];
+        @apply max-w-[82px] desktop:min-w-[250px];
     }
     .mgi_menu--btn{
-        @apply flex-grow flex flex-row justify-end;
+        @apply flex-grow desktop:flex flex-row justify-end;
     }
     .mgi_link.active{
         @apply shadow-[inset_0_-9px_0_0_#97c680];
     }
     .mgi_form{
         @apply flex flex-row relative;
+    }
+    .mgi_footer--join .mgi_form{
+        @apply tablet:max-w-[300px];
     }
     #findX.mgi_form{
         @apply mt-[90px] z-10;
@@ -113,28 +125,28 @@
         @apply rounded-full py-2.5 px-[30px] text-[#fff] min-w-[160px] bg-primary shadow-[inset_0_48px_0_0_#1e1e2f] hover:shadow-[inset_0_0_0_0_#1e1e2f] transition-shadow duration-300 ease-out;
     }
     .mgi_button--sendform{
-        @apply block text-[34px] w-[120px] h-full bg-primary hover:shadow-[inset_0_-120px_0_0_#feba88] px-[15px] py-[9px] absolute right-0 top-0 transition-shadow duration-300 ease-out;
+        @apply block text-[34px] w-[86px] desktop:w-[120px] h-full bg-primary hover:shadow-[inset_0_-120px_0_0_#feba88] px-[15px] py-[9px] absolute right-0 top-0 transition-shadow duration-300 ease-out;
     }
     .mgi_button--submit{
         @apply block text-base w-16 h-full bg-primary hover:shadow-[inset_0_-120px_0_0_#feba88] px-[15px] py-[9px] absolute right-0 top-0 transition-shadow duration-300 ease-out;
     }
     #find-passion{
-        @apply pt-[125px];
+        @apply pt-[100px] desktop:pt-[125px];
     }
     #find-passion .mgi_container{
-        @apply flex flex-row items-end;
+        @apply flex flex-col desktop:flex-row desktop:items-end;
     }
     .mgi_hero--left{
         @apply pb-14;
     }
     .mgi_input--big{
-        @apply w-[450px] h-[120px] py-2 pl-[50px] pr-3 text-xl drop-shadow-xl focus:drop-shadow-2xl hover:drop-shadow-2xl;    
+        @apply w-[450px] h-[86px] desktop:h-[120px] py-2 pl-8 desktop:pl-[50px] pr-3 text-xl drop-shadow-xl focus:drop-shadow-2xl hover:drop-shadow-2xl;    
     }
     .mgi_hero--slides{
-        @apply flex flex-row -ml-[85px] -mr-5;
+        @apply flex flex-row desktop:-ml-[85px] desktop:-mr-5;
     }
     .mgi_hero--slide{
-        @apply h-[590px] px-5;
+        @apply h-[590px] desktop:px-5 mr-6 desktop:mr-0;
     }
     .mgi_hero--item{
         @apply w-full h-full rounded-[20px] overflow-hidden relative;
@@ -176,13 +188,13 @@
         @apply mx-auto text-center;
     }
     .mgi_tabs ul{
-        @apply flex flex-row mt-[48px] mb-[56px] justify-center;
+        @apply flex flex-row mt-10 pb-1.5 mb-[32px] desktop:mt-[48px] desktop:mb-[56px] justify-center;
     }
     .mgi_tabs ul li{
         @apply px-5 block;
     }
     .mgi_card{
-        @apply w-full px-4 flex flex-col;
+        @apply w-full tablet:px-4 flex flex-col;
     }
     .mgi_card--thumb{
         @apply w-full mb-6;
@@ -194,10 +206,10 @@
         @apply pb-3;
     }
     .mgi_linepoint{
-        @apply flex flex-row py-[30px] relative;
+        @apply flex flex-row py-4 desktop:py-[30px] relative;
     }
     .linepoint--linedot{
-        @apply absolute right-auto left-7 top-0 bottom-0 w-px border-l-[1px] mt-[103px] -mb-[14px] border-dashed border-neutrals;
+        @apply absolute right-auto left-7 top-0 bottom-0 w-px border-l-[1px] mt-[88px] desktop:mt-[103px] mb-0 desktop:-mb-[14px] border-dashed border-neutrals;
     }
     .linepoint--icon{
         @apply w-[56px] h-[56px] text-center flex flex-row justify-center items-center rounded-full bg-[#fff] mr-[24px] flex-none;
@@ -212,7 +224,10 @@
         @apply mb-4;
     }
     .mgi_achieve{
-        @apply bg-primary mt-12 py-9 flex flex-row justify-center -mb-[50px];
+        @apply bg-primary mt-12 py-9 hidden desktop:flex flex-row justify-center -mb-[50px];
+    }
+    .mgi_achieve--mobile{
+        @apply absolute left-auto top-[35px] w-[162px] right-4 bottom-auto h-[70px] bg-primary mt-12 py-9 flex flex-row desktop:hidden justify-center -mb-[50px];
     }
     .achieve--left, .achieve--right{
         @apply flex flex-row items-center;
@@ -245,7 +260,10 @@
         @apply w-fit flex flex-row;
     }
     .carousell--card{
-        @apply w-[296px] mr-8 bg-[#fff] rounded-2xl p-6 flex flex-col justify-between;
+        @apply w-[240px] desktop:w-[296px] mr-8 bg-[#fff] rounded-2xl p-4 desktop:p-6 flex flex-col justify-between;
+    }
+    .carousell--card p{
+        @apply text-sm desktop:text-base text-opacity-80;
     }
     .card--avatar{
         @apply mr-3;
@@ -260,10 +278,10 @@
         @apply text-primary;
     }
     .card--bottom{
-        @apply flex flex-row items-center mt-12;
+        @apply flex flex-row items-center mt-8 desktop:mt-12;
     }
     .mgi_carousell--arrow{
-        @apply flex flex-row mx-auto justify-center mt-[44px];
+        @apply flex flex-row mx-auto justify-center mt-8 desktop:mt-[44px];
     }
     .mgi_carousell--arrow .arrow--left, .mgi_carousell--arrow .arrow--right{
         @apply border mx-3 p-3 rounded-full block border-solid border-background hover:border-neutrals;
@@ -278,7 +296,7 @@
         @apply text-xl leading-[1.4em];
     }
     .mgi_skills--bottom{
-        @apply flex flex-row w-full;
+        @apply flex flex-col-reverse gap-y-10 desktop:flex-row w-full;
     }
     .mgi_skills--bottom .col--left{
         @apply max-w-[270px] mr-[60px];
@@ -287,16 +305,19 @@
         @apply flex-grow;
     }
     .mgi_footer--top{
-        @apply w-full pt-14 pb-5 mb-6 flex flex-row min-h-[120px] justify-between border-b border-solid border-b-neutrals border-opacity-10;
+        @apply w-full pt-10 desktop:pt-14 pb-10 desktop:pb-5 mb-6 flex flex-col gap-y-10 desktop:flex-row min-h-[120px] justify-between border-b border-solid border-b-neutrals border-opacity-10;
+    }
+    .mgi_footer--logo{
+        @apply max-w-[82px] desktop:max-w-max;
     }
     .mgi_footer--menu ul{
         @apply flex flex-row flex-wrap max-w-[400px] mx-auto;
     }
     .mgi_footer--menu ul li{
-        @apply w-1/2 mb-10;
+        @apply w-1/2 mb-6 desktop:mb-10;
     }
     .mgi_input--normal{
-        @apply py-[9px] px-[15px] w-[300px] h-16 border border-solid border-neutrals border-opacity-30 ;
+        @apply py-[9px] px-[15px] w-full tablet:w-[300px] h-16 border border-solid border-neutrals border-opacity-30 ;
     }
     .mgi_footer--join h4{
         @apply pb-5;
@@ -308,7 +329,7 @@
         @apply mr-[14px];
     }
     .mgi_footer--bottom{
-        @apply flex flex-row justify-between;
+        @apply flex flex-col-reverse gap-y-6 desktop:flex-row items-center justify-between;
     }
     .mgi_socials--icon{
         @apply flex flex-row;
