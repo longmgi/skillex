@@ -1096,6 +1096,10 @@ nav {
     padding-right: 1rem;
   }
 }
+.mgi_card:hover h3 {
+  --tw-text-opacity: 1;
+  color: rgb(151 198 128 / var(--tw-text-opacity));
+}
 .mgi_card--thumb {
   margin-bottom: 1.5rem;
   width: 100%;
@@ -1192,17 +1196,14 @@ nav {
   top: 35px;
   right: 1rem;
   bottom: auto;
+  z-index: 5;
   margin-top: 3rem;
   margin-bottom: -50px;
-  display: flex;
   height: 70px;
   width: 162px;
-  flex-direction: row;
-  justify-content: center;
+  overflow: hidden;
   --tw-bg-opacity: 1;
   background-color: rgb(151 198 128 / var(--tw-bg-opacity));
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
 }
 @media (min-width: 1335px) {
 
@@ -1210,7 +1211,7 @@ nav {
     display: none;
   }
 }
-.achieve--left, .achieve--right {
+.achieve--left, .achieve--right, .achieve--top, .achieve--bottom {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1223,15 +1224,38 @@ nav {
   --tw-bg-opacity: 1;
   background-color: rgb(30 30 47 / var(--tw-bg-opacity));
 }
+.achieve--top, .achieve--bottom {
+  height: 70px;
+  width: 100%;
+  flex-grow: 1;
+  justify-content: center;
+}
 .achieve--bigtext {
-  margin-right: 1rem;
-  font-size: 52px;
+  margin-right: 0.5rem;
+  font-size: 28px;
+}
+@media (min-width: 1335px) {
+
+  .achieve--bigtext {
+    margin-right: 1rem;
+  }
+
+  .achieve--bigtext {
+    font-size: 52px;
+  }
 }
 .achieve--smalltext {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
   text-transform: uppercase;
   line-height: 1.4em;
+}
+@media (min-width: 1335px) {
+
+  .achieve--smalltext {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
 }
 .mgi_iframe--wrap {
   position: relative;
@@ -1279,7 +1303,7 @@ nav {
   flex-direction: row;
 }
 .carousell--card {
-  margin-right: 2rem;
+  margin-right: 1.5rem;
   display: flex;
   width: 240px;
   flex-direction: column;
@@ -1290,6 +1314,10 @@ nav {
   padding: 1rem;
 }
 @media (min-width: 1335px) {
+
+  .carousell--card {
+    margin-right: 2rem;
+  }
 
   .carousell--card {
     width: 296px;

@@ -196,6 +196,9 @@
     .mgi_card{
         @apply w-full tablet:px-4 flex flex-col;
     }
+    .mgi_card:hover h3{
+        @apply text-primary;
+    }
     .mgi_card--thumb{
         @apply w-full mb-6;
     }
@@ -227,19 +230,22 @@
         @apply bg-primary mt-12 py-9 hidden desktop:flex flex-row justify-center -mb-[50px];
     }
     .mgi_achieve--mobile{
-        @apply absolute left-auto top-[35px] w-[162px] right-4 bottom-auto h-[70px] bg-primary mt-12 py-9 flex flex-row desktop:hidden justify-center -mb-[50px];
+        @apply absolute left-auto top-[35px] w-[162px] right-4 bottom-auto h-[70px] bg-primary mt-12 desktop:hidden -mb-[50px] z-[5] overflow-hidden;
     }
-    .achieve--left, .achieve--right{
+    .achieve--left, .achieve--right, .achieve--top, .achieve--bottom{
         @apply flex flex-row items-center;
     }
     .achieve--line{
         @apply w-px h-10 mx-[52px] bg-neutrals;
     }
+    .achieve--top, .achieve--bottom{
+        @apply h-[70px] w-full flex-grow justify-center;
+    }
     .achieve--bigtext{
-        @apply text-[52px] mr-4;
+        @apply text-[28px] desktop:text-[52px] mr-2 desktop:mr-4;
     }
     .achieve--smalltext{
-        @apply text-sm leading-[1.4em] uppercase;
+        @apply text-xs desktop:text-sm leading-[1.4em] uppercase;
     }
     .mgi_iframe--wrap{
         @apply relative max-w-[950px] min-h-[470px] bg-[#fff] w-full rounded-2xl overflow-hidden;
@@ -260,7 +266,7 @@
         @apply w-fit flex flex-row;
     }
     .carousell--card{
-        @apply w-[240px] desktop:w-[296px] mr-8 bg-[#fff] rounded-2xl p-4 desktop:p-6 flex flex-col justify-between;
+        @apply w-[240px] desktop:w-[296px] mr-6 desktop:mr-8 bg-[#fff] rounded-2xl p-4 desktop:p-6 flex flex-col justify-between;
     }
     .carousell--card p{
         @apply text-sm desktop:text-base text-opacity-80;
