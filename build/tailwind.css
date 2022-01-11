@@ -645,6 +645,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
+@media (min-width: 1335px) {
+
+  .mgi_container {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
 /* Mgi grid */
 .mgi_grid--2 {
   display: grid;
@@ -700,6 +707,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mgi_menu--text, .mgi_menu--btn {
   display: none;
+}
+@media (min-width: 1335px) {
+
+  .mgi_menu--text, .mgi_menu--btn {
+    display: block;
+  }
 }
 header {
   position: absolute;

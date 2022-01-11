@@ -44,7 +44,7 @@
 }
 @layer components{
     .mgi_container{
-        @apply container px-6 mx-auto;
+        @apply container px-6 desktop:px-0 mx-auto;
     }
     /* Mgi grid */
     .mgi_grid--1{
@@ -88,7 +88,7 @@
         @apply mr-10;
     }
     .mgi_menu--text, .mgi_menu--btn{
-        @apply hidden;
+        @apply hidden desktop:block;
     }
     header{
         @apply absolute top-0 left-0 right-0 z-50 bg-background;
