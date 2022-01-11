@@ -146,12 +146,24 @@
         @apply h-[115%];
     }
     .mgi_hero--overlay{
-        @apply absolute w-full top-0 bottom-0 left-0 flex flex-row justify-between bg-gradient-to-t from-neutrals text-[#fff];
+        @apply absolute w-full top-0 bottom-0 left-0 flex flex-row justify-between text-[#fff];
+    }
+    .mgi_hero--grad{
+        @apply absolute w-full h-1/2 bottom-0 left-0 bg-gradient-to-t from-neutrals;
     }
     .slide--meta{
+        @apply z-[2];
+    }
+    .slide--meta.-more{
         @apply absolute flex flex-row pl-[100px] pr-10 justify-between bottom-[76px] left-0 w-full items-center;
     }
-    .meta--left{
+    .slide--meta.-less{
+        @apply absolute -rotate-90 bottom-[76px] w-[120px] h-[120px] flex flex-row items-center;
+    }
+    .slide--meta .meta--square{
+        @apply absolute bottom-0 left-0 w-[120px] h-full bg-neutrals block z-[-1] -ml-[24px];
+    }
+    .meta--text{
         @apply text-[34px] leading-[1.1em];
     }
     .meta--right{
