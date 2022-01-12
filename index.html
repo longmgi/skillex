@@ -15,17 +15,25 @@
 </head>
 <body>
     <header>
-        <div style="height: 0%; width: 484px;" class="mgi_nav--mobile mgi_container hidden">
-            <div style="opacity: 0;" class="nav-mobile--wrap">
+        <div class="mgi_nav--mobile mgi_container">
+            <div class="nav-mobile--wrap">
                 <nav>
-                    <a href="#find-passion" class="mgi_link--mobile">Find passion</a>
-                    <a href="#categories" class="mgi_link--mobile">Categories</a>
-                    <a href="#skills" class="mgi_link--mobile">Skills</a>
-                    <a href="#customer" class="mgi_link--mobile">Customer</a>
+                    <ul>
+                        <li><a href="#find-passion" class="mgi_link--mobile">Find passion</a></li>
+                        <li><a href="#categories" class="mgi_link--mobile">Categories</a></li>
+                        <li><a href="#skills" class="mgi_link--mobile">Skills</a></li>
+                        <li><a href="#customer" class="mgi_link--mobile">Customer</a></li>
+                    </ul>
                 </nav>
                 <div class="mgi_menu--btn">
-                    <button class="mgi_button--text mr-[30px]">Login</button>
+                    <button class="mgi_button--text">Login</button>
                     <button class="mgi_button--pill">Free Trial</button>
+                </div>
+                <div class="mgi_hambuger -close">
+                    <div class="mgi_hambuger--wrap">
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -46,9 +54,11 @@
                     <button class="mgi_button--text mr-[30px]">Login</button>
                     <button class="mgi_button--pill">Free Trial</button>
                 </div>
-                <div class="mgi_hambuger">
-                    <span></span>
-                    <span></span>
+                <div class="mgi_hambuger -open">
+                    <div class="mgi_hambuger--wrap">
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -167,60 +177,84 @@
                 <h2 class="mx-auto text-center">Unlimited access to 100+ instructors</h2>
                 <div class="mgi_tabs">
                     <ul>
-                        <li><a class="mgi_link active" href="#">All categories</a></li>
-                        <li><a class="mgi_link" href="#">Entertainment</a></li>
-                        <li><a class="mgi_link" href="#">Lifestyle</a></li>
-                        <li><a class="mgi_link" href="#">Writing</a></li>
-                        <li><a class="mgi_link" href="#">Business</a></li>
-                        <li><a class="mgi_link" href="#">Food</a></li>
+                        <li><a class="tabs--link -active" href="#">All categories</a></li>
+                        <li><a class="tabs--link" href="#">Entertainment</a></li>
+                        <li><a class="tabs--link" href="#">Lifestyle</a></li>
+                        <li><a class="tabs--link" href="#">Writing</a></li>
+                        <li><a class="tabs--link" href="#">Business</a></li>
+                        <li><a class="tabs--link" href="#">Food</a></li>
                     </ul>
                 </div>
                 <div class="mgi_tabs--contents">
-                    <div class="mgi_content">
-                        <div class="mgi_grid--4">
+                    <div class="mgi_contents">
+                        <div class="mgi_contents--grid">
                             <div class="mgi_card">
-                                <div class="mgi_card--thumb">
-                                    <img src="./images/categories/categories_01.jpg" alt="">
-                                </div>
-                                <div class="mgi_card--meta">
-                                    <h3>Sales Marketing</h3>
-                                    <span class="meta--date">
-                                        4 month
-                                    </span>
-                                </div>
+                                <a href="#" class="mgi_card--link">
+                                    <div class="mgi_card--thumb">
+                                        <img src="./images/categories/categories_01.jpg" alt="">
+                                    </div>
+                                    <div class="card--arrow">
+                                        <img src="./images/ico_arrow-link.svg" alt="">
+                                    </div>
+                                    <div class="mgi_card--meta">
+                                        <h3>Sales Marketing</h3>
+                                        <span class="meta--date">
+                                            4 month
+                                        </span>
+                                    </div>
+                                </a>
+                                
                             </div>
                             <div class="mgi_card">
-                                <div class="mgi_card--thumb">
-                                    <img src="./images/categories/categories_02.jpg" alt="">
-                                </div>
-                                <div class="mgi_card--meta">
-                                    <h3>Data analytics</h3>
-                                    <span class="meta--date">
-                                        3 month
-                                    </span>
-                                </div>
+                                <a href="#" class="mgi_card--link">
+                                    <div class="mgi_card--thumb">
+                                        <img src="./images/categories/categories_02.jpg" alt="">
+                                    </div>
+                                    <div class="card--arrow">
+                                        <img src="./images/ico_arrow-link.svg" alt="">
+                                    </div>
+                                    <div class="mgi_card--meta">
+                                        <h3>Data analytics</h3>
+                                        <span class="meta--date">
+                                            3 month
+                                        </span>
+                                    </div>
+                                </a>
+                                
                             </div>
                             <div class="mgi_card">
-                                <div class="mgi_card--thumb">
-                                    <img src="./images/categories/categories_03.jpg" alt="">
-                                </div>
-                                <div class="mgi_card--meta">
-                                    <h3>Copywriting Pro</h3>
-                                    <span class="meta--date">
-                                        2 month
-                                    </span>
-                                </div>
+                                <a href="#" class="mgi_card--link">
+                                    <div class="mgi_card--thumb">
+                                        <img src="./images/categories/categories_03.jpg" alt="">
+                                    </div>
+                                    <div class="card--arrow">
+                                        <img src="./images/ico_arrow-link.svg" alt="">
+                                    </div>
+                                    <div class="mgi_card--meta">
+                                        <h3>Copywriting Pro</h3>
+                                        <span class="meta--date">
+                                            2 month
+                                        </span>
+                                    </div>
+                                </a>
+                                
                             </div>
                             <div class="mgi_card">
-                                <div class="mgi_card--thumb">
-                                    <img src="./images/categories/categories_04.jpg" alt="">
-                                </div>
-                                <div class="mgi_card--meta">
-                                    <h3>Design art</h3>
-                                    <span class="meta--date">
-                                        4 month
-                                    </span>
-                                </div>
+                                <a href="#" class="mgi_card--link">
+                                    <div class="mgi_card--thumb">
+                                        <img src="./images/categories/categories_04.jpg" alt="">
+                                    </div>
+                                    <div class="card--arrow">
+                                        <img src="./images/ico_arrow-link.svg" alt="">
+                                    </div>
+                                    <div class="mgi_card--meta">
+                                        <h3>Design art</h3>
+                                        <span class="meta--date">
+                                            4 month
+                                        </span>
+                                    </div>
+                                </a>
+                                
                             </div>
                         </div>
                     </div>
