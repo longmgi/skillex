@@ -15,7 +15,7 @@
 </head>
 <body>
     <header>
-        <div class="mgi_nav--mobile mgi_container">
+        <div id="navMobile" class="mgi_nav--mobile mgi_container">
             <div class="nav-mobile--wrap">
                 <nav>
                     <ul>
@@ -29,7 +29,7 @@
                     <button class="mgi_button--text">Login</button>
                     <button class="mgi_button--pill">Free Trial</button>
                 </div>
-                <div class="mgi_hambuger -close">
+                <div id="closeMenu" class="mgi_hambuger -close">
                     <div class="mgi_hambuger--wrap">
                         <span></span>
                         <span></span>
@@ -54,7 +54,7 @@
                     <button class="mgi_button--text mr-[30px]">Login</button>
                     <button class="mgi_button--pill">Free Trial</button>
                 </div>
-                <div class="mgi_hambuger -open">
+                <div id="openMenu" class="mgi_hambuger -open">
                     <div class="mgi_hambuger--wrap">
                         <span></span>
                         <span></span>
@@ -80,7 +80,7 @@
                 </div>
                 <div class="mgi_hero--right">
                     <div class="mgi_hero--slides">
-                        <div class="mgi_hero--slide slide--1 w-[58%] active">
+                        <div class="mgi_hero--slide slide--current">
                             <div class="mgi_hero--item">
                                 <img class="slide--thumb" src="./images/hero_person-1.jpg" alt="">
                             <div class="mgi_hero--overlay">
@@ -96,7 +96,7 @@
                                         Topics
                                     </div>
                                 </div>
-                                <div class="slide--meta -less !hidden">
+                                <div class="slide--meta -less">
                                     <span class="meta--text">
                                         Writing
                                     </span>
@@ -110,21 +110,24 @@
                             </div>
                             </div>
                         </div>
-                        <div class="mgi_hero--slide slide--2 w-[21%]">
+                        <div class="mgi_hero--slide slide--hover">
                             <div class="mgi_hero--item">
                                 <img class="slide--thumb" src="./images/hero_person-2.jpg" alt="">
                             <div class="mgi_hero--overlay">
-                                <div class="slide--meta -more !hidden">
+                                <div class="slide--hovermeta -more">
                                     <div class="meta--left">
-                                        Writing</br>
-                                        Course
+                                        <span class="meta--text">
+                                            Writing</br>
+                                            Course
+                                        </span>
+                                        
                                     </div>
                                     <div class="meta--right">
                                         <span class="text--big">100</span></br>
                                         Topics
                                     </div>
                                 </div>
-                                <div class="slide--meta -less">
+                                <div class="slide--hovermeta -less">
                                     <span class="meta--text">
                                         Writing
                                     </span>
@@ -138,21 +141,24 @@
                             </div>
                             </div>
                         </div>
-                        <div class="mgi_hero--slide slide--3 w-[21%]">
+                        <div class="mgi_hero--slide slide--hover">
                             <div class="mgi_hero--item">
                                 <img class="slide--thumb" src="./images/hero_person-3.jpg" alt="">
                             <div class="mgi_hero--overlay">
-                                <div class="slide--meta -more !hidden">
+                                <div class="slide--hovermeta -more">
                                     <div class="meta--left">
-                                        Business</br>
-                                        Course
+                                        <span class="meta--text">
+
+                                            Business</br>
+                                            Course
+                                        </span>
                                     </div>
                                     <div class="meta--right">
                                         <span class="text--big">100</span></br>
                                         Topics
                                     </div>
                                 </div>
-                                <div class="slide--meta -less">
+                                <div class="slide--hovermeta -less">
                                     <span class="meta--text">
                                         Business
                                     </span>
@@ -451,12 +457,12 @@
                         </div>
                     </div>
                     <div class="mgi_carousell--arrow">
-                        <div class="arrow--left">
+                        <button id="prevSlide" class="arrow--left" onclick="prevSlide()">
                             <img src="./images/ico-arrow.svg" alt="">
-                        </div>
-                        <div class="arrow--right">
+                        </button>
+                        <button id="nextSlide" class="arrow--right" onclick="nextSlide()">
                             <img src="./images/ico-arrow.svg" alt="">
-                        </div>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -514,5 +520,6 @@
             </div>
         </footer>
     </main>
+    <script src="./main.js"></script>
 </body>
 </html>
