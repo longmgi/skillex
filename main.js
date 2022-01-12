@@ -50,3 +50,30 @@ btnCloseMenu.addEventListener("click", toggleNav);
         viewport.style = `transform: translateX(0px)`;
     }
  }
+// tab
+var tabs = $$(".tabs--link");
+var tab_panels = $$(".mgi_contents");
+
+tabs.forEach((tab,i) => {
+    const panel = tab_panels[i];
+    tab.onclick = function(){
+        var tabActive = $(".tabs--link.-active");
+        var panelActive = $(".mgi_contents.-active");
+        tabActive.classList.remove("-active");
+        panelActive.classList.remove("-active");
+        this.classList.add("-active");
+        panel.classList.add("-active");
+    }
+});
+
+ //Fix Hover
+var slideHover = $(".slide--hover");
+var slideCurrent = $(".slide--current")
+slideHover.addEventListener("mouseover", fixSlide);
+function fixSlide(m){
+    var checkFix = slideCurrent.classList.contains("-small");
+        if(!checkFix){
+            slideCurrent.classList.add("-small");
+        }
+}
+slideHover.removeEventListener("mousemove", fixSlide);
