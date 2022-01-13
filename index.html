@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skillex exercise</title>
+    <link rel="shortcut icon" href="images/favicon.png">
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +20,7 @@
             <div class="nav-mobile--wrap">
                 <nav>
                     <ul>
-                        <li><a href="#find-passion" class="mgi_link--mobile">Find passion</a></li>
+                        <li><a href="#findpassion" class="mgi_link--mobile">Find passion</a></li>
                         <li><a href="#categories" class="mgi_link--mobile">Categories</a></li>
                         <li><a href="#skills" class="mgi_link--mobile">Skills</a></li>
                         <li><a href="#customer" class="mgi_link--mobile">Customer</a></li>
@@ -44,14 +45,14 @@
                 </div>
                 <div class="mgi_menu--text">
                     <ul>
-                        <li><a class="mgi_link" href="#find-passion">Find passion</a></li>
+                        <li><a class="mgi_link" href="#findpassion">Find passion</a></li>
                         <li><a class="mgi_link" href="#categories">Categories</a></li>
                         <li><a class="mgi_link" href="#skills">Skills</a></li>
                         <li><a class="mgi_link" href="#customer">Customer</a></li>
                     </ul>
                 </div>
                 <div class="mgi_menu--btn">
-                    <button class="mgi_button--text mr-[30px]">Login</button>
+                    <a class="mr-[30px] mgi_link">Login</a>
                     <button class="mgi_button--pill">Free Trial</button>
                 </div>
                 <div id="openMenu" class="mgi_hambuger -open">
@@ -65,7 +66,7 @@
     </header>
     <main>
         <!-- Find passion -->
-        <section id="find-passion">
+        <section id="findpassion">
             <div class="mgi_container">
                 <div class="mgi_hero--left">
                     <h1 class="mgi_title">
@@ -73,9 +74,10 @@
                         Learn.</br>
                         Grow.
                     </h1>
-                    <form action="#" id="findX" class="mgi_form">
-                        <input type="text" class="mgi_input--big" placeholder="Find your passion">
+                    <form action="#" id="findX" class="mgi_form" onsubmit="return validateEmail()"  name="mgiform">
+                        <input type="text" class="mgi_input--big" placeholder="Find your passion" name="email">
                         <button type="submit" class="mgi_button--sendform">Go</button>
+                        <span class="mgi_message"></span>
                     </form>
                 </div>
                 <div class="mgi_hero--right container--slide">
@@ -174,9 +176,10 @@
                         </div>
                     </div>
                 </div>
-                <form action="#" id="findXmobile" class="mgi_form">
-                    <input type="text" class="mgi_input--big" placeholder="Find your passion">
+                <form action="#" id="findXmobile" class="mgi_form" onsubmit="return validateEmail()"  name="mgiform">
+                    <input type="text" class="mgi_input--big" placeholder="Find your passion" name="email">
                     <button type="submit" class="mgi_button--sendform">Go</button>
+                    <span class="mgi_message"></span>
                 </form>
             </div>
         </section>
@@ -649,7 +652,7 @@
             <div class="mgi_container">
                 <div class="mgi_grid--2 mgi_skills--top">
                     <div class="col--left">
-                        <h2>Get the skills you</br>need for a job that </br>is in demand.</h2>
+                        <h2>Get the skills you</br>need for a job that </br>is in demand<span class="text-primary">.</span></h2>
                     </div>
                     <div class="col--right">
                         <p>The modern labor market dictates its own terms. Today, to be a competitive specialist requires more than professional skills.</p>
@@ -730,7 +733,7 @@
         <!-- Customer -->
         <section id="customer">
             <div class="mgi_container">
-                <h2 class="text-center mb-12">What our customer say</h2>
+                <h2 class="text-center mb-12">What our customer say<span class="text-primary">.</span></h2>
             </div>
             <div class="container--slide">
                 <div class="mgi_carousell">
@@ -856,17 +859,18 @@
                     </div>
                     <div class="mgi_footer--menu flex-grow">
                         <ul>
-                            <li><a class="mgi_link" href="#">Find passion</a></li>
-                            <li><a class="mgi_link" href="#">Categories</a></li>
-                            <li><a class="mgi_link" href="#">Skills</a></li>
-                            <li><a class="mgi_link" href="#">Customer</a></li>
+                            <li><a class="mgi_link" href="#findpassion">Find passion</a></li>
+                            <li><a class="mgi_link" href="#categories">Categories</a></li>
+                            <li><a class="mgi_link" href="#skills">Skills</a></li>
+                            <li><a class="mgi_link" href="#customer">Customer</a></li>
                         </ul>
                     </div>
                     <div class="mgi_footer--join">
                         <h4>Join our community</h4>
-                        <form action="#" id="findY" class="mgi_form">
-                            <input type="text" class="mgi_input--normal" placeholder="Enter your email">
+                        <form action="#" id="findY" class="mgi_form" onsubmit="return validateEmail()" name="mgiform">
+                            <input type="text" class="mgi_input--normal" placeholder="Enter your email" name="email">
                             <button class="mgi_button--submit">Go</button>
+                            <span class="mgi_message"></span>
                         </form>
                     </div>
                 </div>

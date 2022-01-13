@@ -867,6 +867,7 @@ header.-fixtop nav {
 .mgi_menu--btn {
   flex-grow: 1;
   flex-direction: row;
+  align-items: center;
   justify-content: flex-end;
 }
 @media (min-width: 1335px) {
@@ -875,7 +876,7 @@ header.-fixtop nav {
     display: flex;
   }
 }
-.mgi_link.active {
+.mgi_link.-active {
   --tw-shadow: inset 0 -9px 0 0 #97c680;
   --tw-shadow-colored: inset 0 -9px 0 0 var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -884,6 +885,11 @@ header.-fixtop nav {
   position: relative;
   display: flex;
   flex-direction: row;
+}
+.mgi_form span.mgi_message {
+  position: absolute;
+  bottom: -2rem;
+  left: 0px;
 }
 @media (min-width: 768px) {
 
@@ -927,6 +933,12 @@ header.-fixtop nav {
   padding-bottom: 0.625rem;
   padding-left: 30px;
   padding-right: 30px;
+}
+@media (min-width: 1335px) {
+
+  .mgi_button--text {
+    border-style: none;
+  }
 }
 .mgi_button--pill {
   min-width: 160px;
@@ -1011,32 +1023,32 @@ header.-fixtop nav {
   width: auto;
   flex-grow: 1;
 }
-#find-passion {
+#findpassion {
   padding-bottom: 3rem;
   padding-top: 100px;
 }
 @media (min-width: 1335px) {
 
-  #find-passion {
+  #findpassion {
     padding-bottom: 2.25rem;
   }
 
-  #find-passion {
+  #findpassion {
     padding-top: 125px;
   }
 }
-#find-passion .mgi_container {
+#findpassion .mgi_container {
   display: flex;
   flex-direction: column;
   overflow-x: visible;
 }
 @media (min-width: 1335px) {
 
-  #find-passion .mgi_container {
+  #findpassion .mgi_container {
     flex-direction: row;
   }
 
-  #find-passion .mgi_container {
+  #findpassion .mgi_container {
     align-items: flex-end;
   }
 }
@@ -2364,4 +2376,8 @@ header.-fixtop nav {
 }
 .text-center {
   text-align: center;
+}
+.text-primary {
+  --tw-text-opacity: 1;
+  color: rgb(151 198 128 / var(--tw-text-opacity));
 }

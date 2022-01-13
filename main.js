@@ -9,7 +9,6 @@ function caclwidthDevice(){
         document.documentElement.offsetWidth,
         document.documentElement.clientWidth
       );
-    console.log(widthDevice);
     return widthDevice;
 }
 window.addEventListener("resize", caclwidthDevice);
@@ -55,11 +54,9 @@ linksMobile.forEach((link,i)=>{
  
  function prevSlide(){
     handleClickslide(-1);
-    console.log("width", widthItem);
  }
  function nextSlide(){
     handleClickslide(1)
-    console.log(items[0]);
 }
  function handleClickslide(direction){
     if(widthDevice>=1335){
@@ -144,5 +141,78 @@ function autoAnimation(){
 if(widthDevice<1335)
 {
     setInterval(autoAnimation, 4000);
-    console.log(achIndex);
+}
+// Active menu
+var findpassion = parseInt($("#findpassion").offsetTop);
+var categories = parseInt($("#categories").offsetTop);
+var skills = parseInt($("#skills").offsetTop);
+var customer = parseInt($("#customer").offsetTop);
+var menuLinks = $$(".mgi_link");
+
+window.addEventListener("scroll",function(){
+    var scrollX = parseInt(window.scrollY);
+    var param;
+    menuLinks.forEach((link,i)=>{
+        link.classList.remove("-active");
+    })
+    if(scrollX>=0 && scrollX < categories){
+        param = "#findpassion";
+        // console.log("#findpassion", scrollX, findpassion);
+    }
+    else if(scrollX >= categories && scrollX < skills){
+        param = "#categories";
+        // console.log("#categories", scrollX, categories);
+    }
+    else if(scrollX >= skills && scrollX < customer){
+        param = "#skills";
+        // console.log("#skills", scrollX, skills);
+    }
+    else if(scrollX>=customer){
+        param = "#customer";
+        // console.log("#customer", scrollX, customer);
+    }
+    var selector = `a.mgi_link[href="${param}"]`;
+    var linkAnchor = $(`${selector}`);
+    linkAnchor.classList.add("-active");
+})
+
+// Scroll smooth
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Validate email
+
+var messages = $$("span.mgi_message");
+function validateEmail(){
+
+    let data = document.forms["mgiform"]["email"].value;
+    console.log(data);
+    const validateEmail = (email) => {
+        return String(email).toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+    };
+    if (data == "") {
+        messages.forEach((message,i)=>{
+            message.innerHTML = "Email must be filled out";
+            message.style.color = "red";
+        })
+        return false;
+    }
+    else if(!validateEmail(data)){
+        messages.forEach((message,i)=>{
+            message.innerHTML = "Email must be right format";
+            message.style.color = "red";
+        })
+        return false;
+    }
+    messages.forEach((message,i)=>{
+            message.innerHTML = "Success";
+            message.style.color = "green";
+        })
 }
