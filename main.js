@@ -1,5 +1,17 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
+//For Responsive
+function caclwidthDevice(){
+    var widthDevice = Math.max(
+        document.body.scrollWidth,
+        document.documentElement.scrollWidth,
+        document.body.offsetWidth,
+        document.documentElement.offsetWidth,
+        document.documentElement.clientWidth
+      ) && $(".mgi_container").offsetWidth;
+    console.log(widthDevice);
+    return widthDevice;
+}
 // Scroll event
 window.addEventListener('scroll', function() {
     var positionX = window.pageYOffset;
@@ -34,7 +46,6 @@ btnCloseMenu.addEventListener("click", toggleNav);
  var endPos = items[items.length -5].offsetLeft;
  var nextBtn = $("#nextSlide");
  var prevBtn = $("#prevSlide");
- console.log("cuoi",endPos);
  function prevSlide(){
     handleClickslide(-1);
  }
@@ -67,13 +78,43 @@ tabs.forEach((tab,i) => {
 });
 
  //Fix Hover
-var slideHover = $(".slide--hover");
+var slideHover = $$(".slide--hover");
 var slideCurrent = $(".slide--current")
-slideHover.addEventListener("mouseover", fixSlide);
-function fixSlide(m){
+slideHover.forEach((item,i)=>{
+    item.addEventListener("mouseover", fixSlide);
+    item.addEventListener("mouseout", removeHover);
+})
+function fixSlide(){
     var checkFix = slideCurrent.classList.contains("-small");
         if(!checkFix){
             slideCurrent.classList.add("-small");
         }
 }
-slideHover.removeEventListener("mousemove", fixSlide);
+function removeHover(){
+    $(".slide--current.-small").classList.remove("-small");
+}
+// Auto achieve
+
+var achieves = $$(".achieve-showdown");
+var achTop = $(".achieve--top");
+var achBottom = $(".achieve--bottom");
+var achIndex=0;
+window.addEventListener("resize", caclwidthDevice);
+var widthDevice = caclwidthDevice();
+function autoAnimation(){
+    achIndex++;
+    $(".achieve-showdown.-active").classList.remove("-active");
+    $(".achieve-showdown.-slidedown").classList.remove("-slidedown");
+    if(achIndex>=achieves.length){
+        achIndex=0;
+    }
+        achieves[achIndex].classList.add("-active");
+        $(".achieve-showdown:not(.-active)").classList.add("-slidedown");
+    return achIndex;
+}
+
+if(widthDevice<1335)
+{
+    setInterval(autoAnimation, 4000);
+    console.log(achIndex);
+}
