@@ -1970,13 +1970,11 @@ header.-fixtop nav {
   padding-left: 1.5rem;
   padding-bottom: 1.25rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 1335px) {
 
   .mgi_carousell--viewport {
     overflow: visible;
   }
-}
-@media (min-width: 1335px) {
 
   .mgi_carousell--viewport {
     padding-left: 0px;

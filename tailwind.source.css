@@ -408,7 +408,7 @@
         @apply w-auto tablet:mx-auto tablet:container;
     }
     .mgi_carousell--viewport{
-        @apply pl-6 desktop:pl-0 w-full overflow-auto tablet:overflow-visible pb-5;
+        @apply pl-6 desktop:pl-0 w-full overflow-auto desktop:overflow-visible pb-5;
     }
     .mgi_carousell--wrap{
         @apply w-fit flex flex-row transition-transform duration-300 ease-in-out overflow-auto snap-mandatory desktop:snap-none snap-x;

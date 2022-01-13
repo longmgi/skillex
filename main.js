@@ -8,10 +8,12 @@ function caclwidthDevice(){
         document.body.offsetWidth,
         document.documentElement.offsetWidth,
         document.documentElement.clientWidth
-      ) && $(".mgi_container").offsetWidth;
+      );
     console.log(widthDevice);
     return widthDevice;
 }
+window.addEventListener("resize", caclwidthDevice);
+var widthDevice = caclwidthDevice();
 // Scroll event
 window.addEventListener('scroll', function() {
     var positionX = window.pageYOffset;
@@ -26,7 +28,7 @@ window.addEventListener('scroll', function() {
 var nav = $("#navMobile");
 var btnOpenMenu = $("#openMenu");
 var btnCloseMenu = $("#closeMenu");
-
+var linksMobile = $$(".mgi_link--mobile");
 function toggleNav(){
     var checkMenu = nav.classList.contains("-open");
     if(!checkMenu){
@@ -38,27 +40,54 @@ function toggleNav(){
 btnOpenMenu.addEventListener("click", toggleNav);
 btnCloseMenu.addEventListener("click", toggleNav);
 
+linksMobile.forEach((link,i)=>{
+    link.addEventListener("click", toggleNav);
+});
 // Slide
  var viewport = $(".mgi_carousell--wrap");
  var items = $$(".carousell--card");
  var slide = $(".mgi_carousell");
  var posX = 0;
  var endPos = items[items.length -5].offsetLeft;
+ var widthItem = items[1].offsetWidth+24;
  var nextBtn = $("#nextSlide");
  var prevBtn = $("#prevSlide");
+ 
  function prevSlide(){
     handleClickslide(-1);
+    console.log("width", widthItem);
  }
  function nextSlide(){
     handleClickslide(1)
+    console.log(items[0]);
 }
  function handleClickslide(direction){
-    if(direction == 1){
-        viewport.style = `transform: translateX(-${endPos}px)`;
-    }
-    else if(direction == -1)
-    {
-        viewport.style = `transform: translateX(0px)`;
+    if(widthDevice>=1335){
+        if(direction == 1){
+            viewport.style = `transform: translateX(-${endPos}px)`;
+        }
+        else if(direction == -1)
+        {
+            viewport.style = `transform: translateX(0px)`;
+        }
+    }else{
+        if(direction == 1){
+            posX++;
+            if(posX >= items.length-1)
+            {
+                posX = 0;
+            }
+            viewport.style = `transform: translateX(-${widthItem*posX}px)`;
+        }
+        else if(direction == -1)
+        {
+            posX--;
+            if(posX <= 0)
+            {
+                posX = items.length-1;
+            }
+            viewport.style = `transform: translateX(-${widthItem*posX}px)`;
+        }
     }
  }
 // tab
@@ -99,8 +128,7 @@ var achieves = $$(".achieve-showdown");
 var achTop = $(".achieve--top");
 var achBottom = $(".achieve--bottom");
 var achIndex=0;
-window.addEventListener("resize", caclwidthDevice);
-var widthDevice = caclwidthDevice();
+
 function autoAnimation(){
     achIndex++;
     $(".achieve-showdown.-active").classList.remove("-active");
