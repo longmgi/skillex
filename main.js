@@ -142,7 +142,7 @@ if(widthDevice<1335)
 {
     setInterval(autoAnimation, 4000);
 }
-// Active menu
+// Active menu & Animation scroll
 var findpassion = parseInt($("#findpassion").offsetTop);
 var categories = parseInt($("#categories").offsetTop)-80;
 var skills = parseInt($("#skills").offsetTop)+300;
@@ -157,23 +157,60 @@ window.addEventListener("scroll",function(){
     })
     if(scrollX>=0 && scrollX < categories){
         param = "#findpassion";
-        // console.log("#findpassion", scrollX, findpassion);
     }
     else if(scrollX >= categories && scrollX < skills){
         param = "#categories";
-        // console.log("#categories", scrollX, categories);
     }
     else if(scrollX >= skills && scrollX < customer){
         param = "#skills";
-        // console.log("#skills", scrollX, skills);
     }
     else if(scrollX>=customer){
         param = "#customer";
-        // console.log("#customer", scrollX, customer);
     }
+    
     var selector = `a.mgi_link[href="${param}"]`;
     var linkAnchor = $(`${selector}`);
     linkAnchor.classList.add("-active");
+
+    var cardsCat = $$(".mgi_contents:first-child .mgi_card");
+    var linepoints = $$(".mgi_linepoint")
+    if(scrollX >= categories-300){
+        var i=0;
+        function cardAnimation(){
+            if(i < cardsCat.length){
+                
+                console.log(i);
+                cardsCat[i].classList.add("fadeinUp");
+                i++;
+            }
+        }
+        setInterval(cardAnimation, 200);
+        $(".mgi_tabs").classList.add("fadeinUp");
+    }
+    //DOING
+    if(scrollX >= skills-600){
+        $(".mgi_skills--top .col--left").classList.add("fadeinUp");
+        $(".mgi_skills--top .col--right p").classList.add("fadeinUp");
+    }
+    if(scrollX >= skills-200){
+        var ii=0;
+        function pointAnimation(){
+            if(ii < linepoints.length){
+                linepoints[ii].classList.add("fadeinUp");
+                ii++;
+            }
+        }
+        setInterval(pointAnimation, 200);
+        $(".mgi_skills--bottom .col--right").classList.add("fadeinUp");
+        $(".mgi_achieve").classList.add("fadeinDown");
+    }
+    if(scrollX >= customer-500){
+        $("#customer").classList.add("fadeinUp");
+    }
+    if(scrollX >= customer-100){
+        $("footer").classList.add("fadeinUp");
+    }
+    
 })
 
 // Scroll smooth

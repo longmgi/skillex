@@ -41,6 +41,7 @@
     section{
         @apply py-9 desktop:px-20 desktop:py-16;
     }
+    
 }
 @layer components{
     .mgi_container{
@@ -97,7 +98,8 @@
         @apply fixed top-0 left-0 right-0 bottom-auto bg-[#fff];
     }
     nav{
-        @apply py-5 desktop:py-[38px] transition-all duration-300 ease-out;
+        @apply py-5 desktop:py-[38px] transition-all duration-300 ease-out opacity-0;
+        animation: fadeinDown 1s ease-in-out 0.5s forwards;
     }
     header.-fixtop nav{
         @apply py-[18px];
@@ -171,6 +173,9 @@
     #findXmobile{
         @apply block desktop:hidden mt-[16px] z-10 max-w-[450px];
     }
+    #customer, footer{
+        @apply opacity-0;
+    }
     /* button */
     .mgi_button--text{
         @apply rounded-full py-2.5 px-[30px] w-auto border border-solid border-neutrals border-opacity-10 desktop:border-none;
@@ -194,7 +199,8 @@
         @apply flex flex-col desktop:flex-row desktop:items-end overflow-x-visible;
     }
     .mgi_hero--left{
-        @apply pb-[30px] desktop:pb-14;
+        @apply pb-[30px] desktop:pb-14 z-10;
+        animation: fadeinUp 1.5s ease-in-out 0.5s backwards;
     }
     .mgi_input--big{
         @apply w-full desktop:w-[450px] h-[86px] desktop:h-[120px] py-2 pl-8 desktop:pl-[50px] pr-3 text-xl drop-shadow-xl focus:drop-shadow-2xl hover:drop-shadow-2xl;    
@@ -206,6 +212,7 @@
     }
     .mgi_hero--right{
         @apply w-full overflow-scroll desktop:overflow-visible;
+        animation: fadeinRight 1.5s ease-in-out backwards;
     }
     .mgi_hero--slides{
         @apply snap-mandatory snap-x desktop:snap-none w-auto desktop:w-fit flex flex-row desktop:-ml-[85px] desktop:-mr-5;
@@ -286,10 +293,13 @@
     #categories{
         @apply pb-0 desktop:pb-9;
     }
-    .mgi_tabs{
-        @apply overflow-x-auto mx-auto text-center transition-all duration-200 ease-in;
+    #categories h2{
+        @apply opacity-0;
+        animation: fadeinUp 1s ease-in-out 0.5s forwards;
     }
-    
+    .mgi_tabs{
+        @apply overflow-x-auto mx-auto text-center transition-all duration-200 ease-in opacity-0;
+    }
     .mgi_tabs ul{
         @apply flex flex-row mt-10 pb-1.5 mb-4 desktop:mt-[48px] desktop:mb-[56px] justify-start tablet:justify-center snap-mandatory snap-x;
     }
@@ -323,6 +333,9 @@
     .mgi_card{
         @apply w-full mobile:w-1/2 desktop:w-1/4 mb-10 desktop:mb-0 mobile:px-4 desktop:sticky desktop:top-[40vh];
     }
+    .mgi_contents:first-child .mgi_card{
+        @apply opacity-0;
+    }
     .mgi_card--link{
         @apply flex flex-col relative overflow-hidden appearance-none;
     }
@@ -345,7 +358,7 @@
         @apply absolute top-4 right-4 w-10 h-10 desktop:-translate-y-[200%] rounded-full bg-[#fff] flex flex-row justify-center items-center text-center transition-transform duration-500 ease-in-out;
     }
     .mgi_linepoint{
-        @apply flex flex-row py-4 desktop:py-[30px] relative;
+        @apply flex flex-row py-4 desktop:py-[30px] relative opacity-0;
     }
     .linepoint--linedot{
         @apply absolute right-auto left-7 top-0 bottom-0 w-px border-l-[1px] mt-[88px] desktop:mt-[103px] mb-0 desktop:-mb-[14px] border-dashed border-neutrals;
@@ -363,7 +376,7 @@
         @apply mb-4;
     }
     .mgi_achieve{
-        @apply bg-primary mt-12 py-9 hidden desktop:flex flex-row justify-center -mb-[50px];
+        @apply bg-primary mt-12 py-9 hidden desktop:flex flex-row justify-center -mb-[50px] opacity-0;
     }
     .mgi_achieve--mobile{
         @apply absolute left-auto -top-[35px] w-[162px] right-4 bottom-auto h-[70px] bg-primary desktop:hidden -mb-[50px] z-[5] overflow-hidden;
@@ -381,10 +394,10 @@
         @apply absolute top-0 left-0 h-[70px] w-full flex-grow justify-center;
     }
     .achieve-showdown.-active{
-        animation: showactive 0.5s ease-in-out forwards;
+        animation: showactive 0.5s ease-in-out forforwardss;
     }
     .achieve-showdown.-slidedown{
-        animation: showdown 0.5s ease-in-out forwards;
+        animation: showdown 0.5s ease-in-out forforwardss;
     }
     .achieve--bigtext{
         @apply text-[28px] desktop:text-[52px] mr-2 desktop:mr-4;
@@ -446,6 +459,13 @@
     .mgi_carousell--arrow .arrow--right{
         @apply rotate-180;
     }
+    .mgi_skills--top .col--left{
+        @apply opacity-0;
+    }
+    .mgi_skills--top .col--right p{
+        @apply opacity-0;
+        animation-delay: 1s;
+    }
     .mgi_skills--top .col--right{
         @apply max-w-[544px] z-10 mr-20 w-full;
     }
@@ -462,7 +482,7 @@
         @apply max-w-[270px] mr-[60px];
     }
     .mgi_skills--bottom .col--right{
-        @apply flex-grow relative;
+        @apply flex-grow relative opacity-0;
     }
     .mgi_footer--top{
         @apply w-full pt-10 desktop:pt-14 pb-10 desktop:pb-5 mb-6 flex flex-col gap-y-10 desktop:flex-row min-h-[120px] justify-between border-b border-solid border-b-neutrals border-opacity-10;
@@ -503,6 +523,22 @@
     .mgi_footer--bottom{
         @apply pb-6;
     }
+    /* Animation */
+    .fadein{
+        animation: fadein 1s ease-out forwards;
+    }
+    .fadeinUp{
+        animation: fadeinUp 1s ease-out forwards;
+    }
+    .fadeinDown{
+        animation: fadeinDown 1s ease-out forwards;
+    }
+    .fadeinRight{
+        animation: fadeinRight 1s ease-out forwards;
+    }
+    .exDown{
+        animation: exDown 1s ease-in backwards;
+    }
     @keyframes fadein {
         from{
             opacity: 0;
@@ -525,6 +561,46 @@
         }
         to{
             transform: translateY(0);
+        }
+    }
+    @keyframes fadeinDown{
+        from{
+            transform: translateY(-80%);
+            opacity: 0;
+        }
+        to{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    @keyframes fadeinUp{
+        from{
+            transform: translateY(80%);
+            opacity: 0;
+        }
+        to{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    @keyframes fadeinRight{
+        from{
+            transform: translateX(-80%);
+            opacity: 0;
+        }
+        to{
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    @keyframes exDown{
+        from{
+            height: 0;
+            opacity: 0;
+        }
+        to{
+            height: min-content;
+            opacity: 1;
         }
     }
 }

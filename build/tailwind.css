@@ -722,6 +722,7 @@ header.-fixtop {
 nav {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
+  opacity: 0;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
@@ -734,6 +735,10 @@ nav {
     padding-bottom: 38px;
   }
 }
+nav{
+        -webkit-animation: fadeinDown 1s ease-in-out 0.5s forwards;
+                animation: fadeinDown 1s ease-in-out 0.5s forwards;
+    }
 header.-fixtop nav {
   padding-top: 18px;
   padding-bottom: 18px;
@@ -921,6 +926,9 @@ header.-fixtop nav {
     display: none;
   }
 }
+#customer, footer {
+  opacity: 0;
+}
 /* button */
 .mgi_button--text {
   width: auto;
@@ -1053,6 +1061,7 @@ header.-fixtop nav {
   }
 }
 .mgi_hero--left {
+  z-index: 10;
   padding-bottom: 30px;
 }
 @media (min-width: 1335px) {
@@ -1061,6 +1070,10 @@ header.-fixtop nav {
     padding-bottom: 3.5rem;
   }
 }
+.mgi_hero--left{
+        -webkit-animation: fadeinUp 1.5s ease-in-out 0.5s backwards;
+                animation: fadeinUp 1.5s ease-in-out 0.5s backwards;
+    }
 .mgi_input--big {
   height: 86px;
   width: 100%;
@@ -1122,6 +1135,10 @@ header.-fixtop nav {
     overflow: visible;
   }
 }
+.mgi_hero--right{
+        -webkit-animation: fadeinRight 1.5s ease-in-out backwards;
+                animation: fadeinRight 1.5s ease-in-out backwards;
+    }
 .mgi_hero--slides {
   display: flex;
   width: auto;
@@ -1428,11 +1445,17 @@ header.-fixtop nav {
     padding-bottom: 2.25rem;
   }
 }
+#categories h2 {
+  opacity: 0;
+        -webkit-animation: fadeinUp 1s ease-in-out 0.5s forwards;
+                animation: fadeinUp 1s ease-in-out 0.5s forwards;
+}
 .mgi_tabs {
   margin-left: auto;
   margin-right: auto;
   overflow-x: auto;
   text-align: center;
+  opacity: 0;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 200ms;
@@ -1583,6 +1606,9 @@ header.-fixtop nav {
     width: 25%;
   }
 }
+.mgi_contents:first-child .mgi_card {
+  opacity: 0;
+}
 .mgi_card--link {
   position: relative;
   display: flex;
@@ -1658,6 +1684,7 @@ header.-fixtop nav {
   flex-direction: row;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  opacity: 0;
 }
 @media (min-width: 1335px) {
 
@@ -1724,6 +1751,7 @@ header.-fixtop nav {
   background-color: rgb(151 198 128 / var(--tw-bg-opacity));
   padding-top: 2.25rem;
   padding-bottom: 2.25rem;
+  opacity: 0;
 }
 @media (min-width: 1335px) {
 
@@ -1779,12 +1807,12 @@ header.-fixtop nav {
   justify-content: center;
 }
 .achieve-showdown.-active{
-        -webkit-animation: showactive 0.5s ease-in-out forwards;
-                animation: showactive 0.5s ease-in-out forwards;
+        -webkit-animation: showactive 0.5s ease-in-out forforwardss;
+                animation: showactive 0.5s ease-in-out forforwardss;
     }
 .achieve-showdown.-slidedown{
-        -webkit-animation: showdown 0.5s ease-in-out forwards;
-                animation: showdown 0.5s ease-in-out forwards;
+        -webkit-animation: showdown 0.5s ease-in-out forforwardss;
+                animation: showdown 0.5s ease-in-out forforwardss;
     }
 .achieve--bigtext {
   margin-right: 0.5rem;
@@ -2118,6 +2146,14 @@ header.-fixtop nav {
   --tw-rotate: 180deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+.mgi_skills--top .col--left {
+  opacity: 0;
+}
+.mgi_skills--top .col--right p {
+  opacity: 0;
+        -webkit-animation-delay: 1s;
+                animation-delay: 1s;
+}
 .mgi_skills--top .col--right {
   z-index: 10;
   margin-right: 5rem;
@@ -2157,6 +2193,7 @@ header.-fixtop nav {
 .mgi_skills--bottom .col--right {
   position: relative;
   flex-grow: 1;
+  opacity: 0;
 }
 .mgi_footer--top {
   margin-bottom: 1.5rem;
@@ -2307,6 +2344,15 @@ header.-fixtop nav {
 .mgi_footer--bottom {
   padding-bottom: 1.5rem;
 }
+/* Animation */
+.fadeinUp{
+        -webkit-animation: fadeinUp 1s ease-out forwards;
+                animation: fadeinUp 1s ease-out forwards;
+    }
+.fadeinDown{
+        -webkit-animation: fadeinDown 1s ease-out forwards;
+                animation: fadeinDown 1s ease-out forwards;
+    }
 @-webkit-keyframes fadein {
         from{
             opacity: 0;
@@ -2353,6 +2399,89 @@ header.-fixtop nav {
         }
         to{
             transform: translateY(0);
+        }
+    }
+@-webkit-keyframes fadeinDown{
+        from{
+            transform: translateY(-80%);
+            opacity: 0;
+        }
+        to{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+@keyframes fadeinDown{
+        from{
+            transform: translateY(-80%);
+            opacity: 0;
+        }
+        to{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+@-webkit-keyframes fadeinUp{
+        from{
+            transform: translateY(80%);
+            opacity: 0;
+        }
+        to{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+@keyframes fadeinUp{
+        from{
+            transform: translateY(80%);
+            opacity: 0;
+        }
+        to{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+@-webkit-keyframes fadeinRight{
+        from{
+            transform: translateX(-80%);
+            opacity: 0;
+        }
+        to{
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+@keyframes fadeinRight{
+        from{
+            transform: translateX(-80%);
+            opacity: 0;
+        }
+        to{
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+@-webkit-keyframes exDown{
+        from{
+            height: 0;
+            opacity: 0;
+        }
+        to{
+            height: -webkit-min-content;
+            height: min-content;
+            opacity: 1;
+        }
+    }
+@keyframes exDown{
+        from{
+            height: 0;
+            opacity: 0;
+        }
+        to{
+            height: -webkit-min-content;
+            height: -moz-min-content;
+            height: min-content;
+            opacity: 1;
         }
     }
 .mx-auto {
