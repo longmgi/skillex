@@ -144,9 +144,9 @@ if(widthDevice<1335)
 }
 // Active menu
 var findpassion = parseInt($("#findpassion").offsetTop);
-var categories = parseInt($("#categories").offsetTop);
-var skills = parseInt($("#skills").offsetTop);
-var customer = parseInt($("#customer").offsetTop);
+var categories = parseInt($("#categories").offsetTop)-84;
+var skills = parseInt($("#skills").offsetTop)-84;
+var customer = parseInt($("#customer").offsetTop)-84;
 var menuLinks = $$(".mgi_link");
 
 window.addEventListener("scroll",function(){
