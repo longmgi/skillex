@@ -204,10 +204,10 @@ window.addEventListener("scroll",function(){
         $(".mgi_skills--bottom .col--right").classList.add("fadeinUp");
         $(".mgi_achieve").classList.add("fadeinDown");
     }
-    if(scrollX >= customer-500){
+    if(scrollX >= customer-450){
         $("#customer").classList.add("fadeinUp");
     }
-    if(scrollX >= customer-100){
+    if(scrollX >= customer-50){
         $("footer").classList.add("fadeinUp");
     }
     

@@ -1801,18 +1801,25 @@ header.-fixtop nav {
   position: absolute;
   top: 0px;
   left: 0px;
+  display: flex;
   height: 70px;
   width: 100%;
   flex-grow: 1;
   justify-content: center;
+  opacity: 0;
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
-.achieve-showdown.-active{
-        -webkit-animation: showactive 0.5s ease-in-out forforwardss;
-                animation: showactive 0.5s ease-in-out forforwardss;
-    }
+.achieve-showdown.-active {
+  opacity: 1;
+        -webkit-animation: showactive 0.5s ease-in-out backwards;
+                animation: showactive 0.5s ease-in-out backwards;
+}
 .achieve-showdown.-slidedown{
-        -webkit-animation: showdown 0.5s ease-in-out forforwardss;
-                animation: showdown 0.5s ease-in-out forforwardss;
+        -webkit-animation: showdown 0.5s ease-in-out backwards;
+                animation: showdown 0.5s ease-in-out backwards;
     }
 .achieve--bigtext {
   margin-right: 0.5rem;

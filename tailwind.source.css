@@ -391,13 +391,14 @@
         @apply w-px h-10 mx-[52px] bg-neutrals;
     }
     .achieve--top, .achieve--bottom{
-        @apply absolute top-0 left-0 h-[70px] w-full flex-grow justify-center;
+        @apply absolute top-0 left-0 h-[70px] w-full flex flex-grow justify-center opacity-0 transition-opacity duration-300 ease-in;
     }
     .achieve-showdown.-active{
-        animation: showactive 0.5s ease-in-out forforwardss;
+        @apply opacity-100;
+        animation: showactive 0.5s ease-in-out backwards;
     }
     .achieve-showdown.-slidedown{
-        animation: showdown 0.5s ease-in-out forforwardss;
+        animation: showdown 0.5s ease-in-out backwards;
     }
     .achieve--bigtext{
         @apply text-[28px] desktop:text-[52px] mr-2 desktop:mr-4;
