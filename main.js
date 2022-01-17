@@ -207,7 +207,7 @@ window.addEventListener("scroll",function(){
     if(scrollX >= customer-450){
         $("#customer").classList.add("fadeinUp");
     }
-    if(scrollX >= customer-200){
+    if(scrollX >= customer-250){
         $("footer").classList.add("fadeinUp");
     }
     
