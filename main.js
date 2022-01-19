@@ -145,8 +145,8 @@ if(widthDevice<1335)
 // Active menu & Animation scroll
 var findpassion = parseInt($("#findpassion").offsetTop);
 var categories = parseInt($("#categories").offsetTop)-80;
-var skills = parseInt($("#skills").offsetTop)+300;
-var customer = parseInt($("#customer").offsetTop)+260;
+var skills = parseInt($("#skills").offsetTop)-50;
+var customer = parseInt($("#customer").offsetTop);
 var menuLinks = $$(".mgi_link");
 
 window.addEventListener("scroll",function(){
@@ -207,7 +207,7 @@ window.addEventListener("scroll",function(){
     if(scrollX >= customer-450){
         $("#customer").classList.add("fadeinUp");
     }
-    if(scrollX >= customer-300){
+    if(scrollX >= customer-100){
         $("footer").classList.add("fadeinUp");
     }
     
