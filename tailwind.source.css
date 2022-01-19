@@ -345,6 +345,12 @@
     .mgi_card:hover h3{
         @apply text-primary;
     }
+    #pic1{
+        @apply bg-[#e7d5c1] w-full h-[300px] mobile:h-[42vw] tablet:h-auto rounded-[20px] object-cover;
+    }
+    #pic2{
+        @apply bg-[#ccdaae] w-full h-[300px] mobile:h-[42vw] tablet:h-auto rounded-[20px] object-cover;
+    }
     .mgi_card--thumb{
         @apply w-full mb-6;
     }

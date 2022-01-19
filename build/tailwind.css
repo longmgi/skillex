@@ -1629,6 +1629,48 @@ header.-fixtop nav {
   --tw-text-opacity: 1;
   color: rgb(151 198 128 / var(--tw-text-opacity));
 }
+#pic1 {
+  height: 300px;
+  width: 100%;
+  border-radius: 20px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(231 213 193 / var(--tw-bg-opacity));
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (min-width: 375px) {
+
+  #pic1 {
+    height: 42vw;
+  }
+}
+@media (min-width: 768px) {
+
+  #pic1 {
+    height: auto;
+  }
+}
+#pic2 {
+  height: 300px;
+  width: 100%;
+  border-radius: 20px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(204 218 174 / var(--tw-bg-opacity));
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (min-width: 375px) {
+
+  #pic2 {
+    height: 42vw;
+  }
+}
+@media (min-width: 768px) {
+
+  #pic2 {
+    height: auto;
+  }
+}
 .mgi_card--thumb {
   margin-bottom: 1.5rem;
   width: 100%;
@@ -2516,4 +2558,9 @@ header.-fixtop nav {
 .text-primary {
   --tw-text-opacity: 1;
   color: rgb(151 198 128 / var(--tw-text-opacity));
+}
+.shadow {
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
